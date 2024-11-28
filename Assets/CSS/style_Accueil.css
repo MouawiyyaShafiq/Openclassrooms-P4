@@ -1,4 +1,4 @@
-/*General + Variables + mixin*/
+/*General + Variables*/
 body {
   margin: 0px;
   font-family: Roboto;
@@ -10,16 +10,76 @@ a {
   text-decoration: none;
 }
 
-.main_container {
-  width: 100%;
-  max-width: 1440px;
-}
-
 .restau-card__img {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+/*Loader*/
+.loader {
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  animation: loader-anime 600ms 1.9s both;
+}
+.loader__logo1 {
+  position: absolute;
+  fill: black;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.loader__logo2 {
+  position: absolute;
+  animation: logo-anime 200ms both;
+}
+.loader__logo2--1 {
+  animation-delay: 200ms;
+}
+.loader__logo2--2 {
+  animation-delay: 400ms;
+}
+.loader__logo2--3 {
+  animation-delay: 600ms;
+}
+.loader__logo2--4 {
+  animation-delay: 800ms;
+}
+.loader__logo2--5 {
+  animation-delay: 1000ms;
+}
+.loader__logo2--6 {
+  animation-delay: 1200ms;
+}
+.loader__logo2--7 {
+  animation-delay: 1400ms;
+}
+.loader__logo2--8 {
+  animation-delay: 1600ms;
+}
+@keyframes logo-anime {
+  from {
+    fill: black;
+  }
+  to {
+    fill: #9356DC;
+  }
+}
+
+@keyframes loader-anime {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 /*Header*/
 .header {
   width: 100%;
@@ -59,6 +119,7 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  /*boutton + animation */
 }
 .CTA-Accueil__titre {
   margin: 0;
@@ -84,6 +145,27 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transition: box-shadow 500ms;
+  overflow: hidden;
+}
+.CTA-Accueil__button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.CTA-Accueil__button:hover::after {
+  opacity: 0.15;
+}
+.CTA-Accueil__button::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 500ms;
 }
 
 /*Section Fonctionnement*/
@@ -166,6 +248,45 @@ a {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+  /*boutton j'aime + animation */
+}
+.restaurants__cards .restau-card__button {
+  position: absolute;
+  top: 195px;
+  right: 21px;
+  z-index: 2;
+}
+.restaurants__cards .restau-card__button--input {
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+}
+.restaurants__cards .restau-card__button--input:checked + .restau-card__button--visual > .heart-full {
+  opacity: 1;
+}
+.restaurants__cards .restau-card__button--input:checked + .restau-card__button--visual > .heart-empty {
+  opacity: 0;
+}
+.restaurants__cards .restau-card__button--visual {
+  font-size: 21px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+.restaurants__cards .restau-card__button--visual .heart-empty {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 100ms;
+}
+.restaurants__cards .restau-card__button--visual .heart-full {
+  z-index: 1;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 100ms;
 }
 .restaurants__cards .restau-card__new {
   padding: 6px 12px;
@@ -184,10 +305,11 @@ a {
   width: 100%;
 }
 .restaurants__cards .restau-card__content {
-  height: 45px;
+  height: 49px;
   display: flex;
   justify-content: space-between;
   padding: 14px 13px;
+  position: relative;
 }
 .restaurants__cards .restau-card__content div {
   width: 70%;
@@ -200,11 +322,6 @@ a {
   font-size: 17px;
   font-weight: 300;
   margin-top: 2px;
-}
-.restaurants__cards .restau-card__content i {
-  margin-top: 7px;
-  margin-right: 12px;
-  font-size: 21px;
 }
 
 /*Section Footer*/

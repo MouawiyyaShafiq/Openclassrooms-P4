@@ -1,4 +1,4 @@
-/*General + Variables + mixin*/
+/*General + Variables*/
 
 $background-color: #F6F6F6 ;
 $primary-color: #9356DC ;
@@ -18,14 +18,62 @@ a{
         text-decoration: none;
     }
 
-.main_container{
-        width: 100%;
-        max-width: 1440px;
-    }
 
 .restau-card__img {
         object-fit: cover;
     }
+
+/*Loader*/
+
+.loader{
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    animation: loader-anime 600ms 1.9s both;
+
+    &__logo1 {
+        position: absolute;
+        fill: black;
+        background-clip: text;
+    }
+
+    &__logo2 {
+        position: absolute;
+        animation: logo-anime 200ms both;
+        
+        @for $i from 1 through 8  {
+            &--#{$i} {
+                animation-delay: 200ms * $i;
+             }
+        }
+    }
+
+    @keyframes logo-anime {
+        from{
+            fill: black; ;
+        }
+        to{
+            fill: $primary-color;
+        }
+    }
+
+}
+
+@keyframes loader-anime {
+    from{
+        transform: translateX(0%)  ;
+    }
+    to{
+        transform: translateX(-100%) ;
+    }
+}
 
 /*Header*/
 
@@ -87,6 +135,8 @@ a{
         margin-bottom: 27px;
     }
 
+    /*boutton + animation */
+
     &__button {
         height: 50px;
         width: 218px;
@@ -97,6 +147,32 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
+        position: relative;
+        transition: box-shadow 500ms;
+        overflow: hidden;
+
+        &:hover{
+
+            box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.25);
+
+            &::after {
+            opacity: 0.15;
+            }
+        }
+
+        &::after {
+            content: "";
+            background-color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: opacity 500ms;
+        }
+
     }
 
 }
@@ -194,6 +270,55 @@ a{
             position: relative;
             overflow: hidden;
 
+            /*boutton j'aime + animation */
+
+            &__button{
+                position: absolute;
+                top: 195px;
+                right: 21px;
+                z-index: 2;
+                
+                &--input{
+                    z-index: 2;
+                    opacity: 0;
+                    position: absolute;
+                    &:checked {
+                        & + .restau-card__button--visual>.heart-full{
+                            opacity: 1;      
+                        }
+
+                        & + .restau-card__button--visual>.heart-empty{
+                            opacity: 0;      
+                        }   
+                    }
+                }
+
+                &--visual{
+                    font-size: 21px;
+                    padding: 0;
+                    border: none;
+                    cursor: pointer;
+                    background-color: white;
+
+                    & .heart-empty {
+                        position: absolute;
+                        opacity: 1;
+                        transition: opacity 100ms;
+                    } 
+                    
+                    & .heart-full{
+                        z-index: 1;
+                        background: linear-gradient(#9356DC,#FF79DA);
+                        background-clip: text;
+                        color: transparent; 
+                        opacity: 0;
+                        transition: opacity 100ms;
+                    }
+
+                }
+                
+            }
+
             &__new{
                 padding: 6px 12px;
                 text-align: center;
@@ -215,10 +340,11 @@ a{
             }
 
             &__content{
-                height: 45px;
+                height: 49px;
                 display: flex;
                 justify-content: space-between;
                 padding: 14px 13px;
+                position: relative;
 
                 div{
                     width: 70%;
@@ -234,12 +360,6 @@ a{
                         margin-top: 2px;
                     }
 
-                }
-
-                i{
-                    margin-top: 7px;
-                    margin-right: 12px;
-                    font-size: 21px;
                 }
 
             }
