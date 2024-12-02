@@ -1,0 +1,124 @@
+/*imports*/
+body {
+  margin: 0px;
+  font-family: Roboto;
+  background-color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Header*/
+.header {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+@media (min-width: 769px) {
+  .header {
+    height: 96px;
+  }
+}
+.header__logo {
+  width: 162px;
+  height: 44px;
+}
+@media (min-width: 769px) {
+  .header__logo {
+    width: 200px;
+    height: 44px;
+  }
+}
+
+/*Footer*/
+.footer {
+  width: 100%;
+  padding: 22px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: #353535;
+  color: white;
+  height: 142px;
+  font-weight: 500;
+}
+@media (min-width: 769px) {
+  .footer {
+    padding: 0px;
+    height: 114px;
+    flex-direction: row-reverse;
+    align-items: end;
+  }
+}
+.footer__logo {
+  height: 27px;
+  width: 101px;
+  fill: white;
+  margin-bottom: 16px;
+  margin-left: 25px;
+}
+@media (min-width: 769px) {
+  .footer__logo {
+    margin-right: 63px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+  }
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-left: 25px;
+}
+@media (min-width: 769px) {
+  .footer__links {
+    flex-direction: row;
+    margin-bottom: 30px;
+    gap: 60px;
+  }
+}
+.footer__lienavecicon {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+@media (min-width: 769px) {
+  .footer__lienavecicon {
+    flex-direction: row;
+    gap: 11px;
+  }
+}
+.footer__liensansicon {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+@media (min-width: 769px) {
+  .footer__liensansicon {
+    flex-direction: row;
+    gap: 11px;
+  }
+}
+.footer__link i {
+  margin-right: 11px;
+}
+.footer__link .fa-utensils {
+  font-size: 14px;
+}
+.footer__link .fa-handshake-angle {
+  font-size: 10px;
+  transform: scaleY(1.3);
+}/*# sourceMappingURL=style_page_Restaurants.css.map */

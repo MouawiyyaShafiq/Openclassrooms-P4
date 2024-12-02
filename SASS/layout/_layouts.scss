@@ -1,0 +1,112 @@
+@mixin header-accueil{
+    width: 100%;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: 769px) {
+        height: 96px;
+    }
+
+    &__logo {
+        width: 162px;
+        height: 44px;
+
+        @media (min-width: 769px) {
+            width: 200px;
+            height: 44px;
+        }
+    }
+    
+}
+
+@mixin footer{
+    width: 100%;
+    padding: 22px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    background-color: #353535;
+    color: white;
+    height: 142px ;
+    font-weight: $weight-medium;
+
+    @media (min-width: 769px) {
+        padding: 0px ;
+        height: 114px ;
+        flex-direction: row-reverse;
+        align-items: end;
+    }
+
+    &__logo {
+        height: 27px;
+        width: 101px;
+        fill: white;
+        margin-bottom:16px ;
+        margin-left: 25px;
+
+        @media (min-width: 769px) {
+            margin-right: 63px;
+            margin-bottom: 30px;
+            margin-left: 80px;
+        }
+    }
+
+    &__links{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: 25px;
+
+        @media (min-width: 769px) {
+            flex-direction: row;
+            margin-bottom: 30px;
+            gap: 60px;
+        }
+    }
+
+    &__lienavecicon{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        @media (min-width: 769px) {
+            flex-direction: row;
+            gap: 11px;
+        }
+
+    }
+
+    &__liensansicon{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        @media (min-width: 769px) {
+            flex-direction: row;
+            gap: 11px;
+        }
+    }
+
+    &__link {
+
+        i{
+            margin-right: 11px;
+            
+        }
+
+        .fa-utensils{
+            font-size: 14px;
+            
+        }
+
+        .fa-handshake-angle{
+            font-size: 10px;
+            transform: scaleY(1.3);
+        }    
+    }
+}

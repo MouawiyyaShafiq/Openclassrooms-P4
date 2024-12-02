@@ -1,0 +1,21 @@
+/*imports*/
+
+@import "../base/normalize";
+
+@import "../layout/layouts";
+
+@import "../utils/mixins";
+
+@import "../utils/variables";
+
+/*Header*/
+
+.header {
+    @include header-accueil;
+}
+
+/*Footer*/
+
+.footer{
+    @include footer;
+}
