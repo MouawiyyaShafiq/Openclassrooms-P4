@@ -28,7 +28,7 @@ main {
   justify-content: center;
   align-items: center;
   background-color: white;
-  animation: loader-anime 600ms 1.9s both;
+  animation: loader-anime 600ms 1.7s both;
 }
 .loader__logo1 {
   position: absolute;
@@ -38,31 +38,31 @@ main {
 }
 .loader__logo2 {
   position: absolute;
-  animation: logo-anime 200ms both;
+  animation: logo-anime 150ms both;
 }
 .loader__logo2--1 {
-  animation-delay: 200ms;
+  animation-delay: 150ms;
 }
 .loader__logo2--2 {
-  animation-delay: 400ms;
+  animation-delay: 300ms;
 }
 .loader__logo2--3 {
-  animation-delay: 600ms;
+  animation-delay: 450ms;
 }
 .loader__logo2--4 {
-  animation-delay: 800ms;
+  animation-delay: 600ms;
 }
 .loader__logo2--5 {
-  animation-delay: 1000ms;
+  animation-delay: 750ms;
 }
 .loader__logo2--6 {
-  animation-delay: 1200ms;
+  animation-delay: 900ms;
 }
 .loader__logo2--7 {
-  animation-delay: 1400ms;
+  animation-delay: 1050ms;
 }
 .loader__logo2--8 {
-  animation-delay: 1600ms;
+  animation-delay: 1200ms;
 }
 @keyframes logo-anime {
   from {
@@ -226,9 +226,11 @@ main {
   }
 }
 .fonctionnement__cards {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 26px;
+  align-items: center;
 }
 @media (min-width: 769px) {
   .fonctionnement__cards {
@@ -246,13 +248,8 @@ main {
   align-items: center;
   gap: 22px;
   padding-left: 34px;
-  margin-left: 32px;
+  margin-left: 12px;
   position: relative;
-}
-@media (min-width: 769px) {
-  .fonctionnement__cards .fonct-card {
-    margin-left: 12px;
-  }
 }
 .fonctionnement__cards .fonct-card__numero {
   font-size: 14.18px;
@@ -337,9 +334,9 @@ main {
   }
 }
 .restaurants__cards .restau-card__button {
-  position: absolute;
   top: 195px;
   right: 21px;
+  position: absolute;
   z-index: 1;
 }
 .restaurants__cards .restau-card__button--input {
@@ -348,14 +345,15 @@ main {
   position: absolute;
   cursor: pointer;
 }
-.restaurants__cards .restau-card__button--input:checked + .restau-card__button--visual > .heart-full {
+.restaurants__cards .restau-card__button--input:checked + .visual > .heart-full {
   opacity: 1;
 }
-.restaurants__cards .restau-card__button--input:checked + .restau-card__button--visual > .heart-empty {
+.restaurants__cards .restau-card__button--input:checked + .visual > .heart-empty {
   opacity: 0;
 }
 .restaurants__cards .restau-card__button--visual {
-  font-size: 21px;
+  font-size: 22px;
+  transform: scaleY(1.1);
   padding: 0;
   border: none;
   background-color: white;
@@ -373,6 +371,8 @@ main {
   color: transparent;
   opacity: 0;
   transition: opacity 100ms;
+  font-size: 1.001em;
+  vertical-align: top;
 }
 .restaurants__cards .restau-card__new {
   padding: 6px 12px;
@@ -391,6 +391,11 @@ main {
   width: 100%;
   background-size: cover;
   background-position: 0% 100%;
+}
+@media (min-width: 426px) {
+  .restaurants__cards .restau-card__img {
+    background-position: center;
+  }
 }
 @media (min-width: 769px) {
   .restaurants__cards .restau-card__img {

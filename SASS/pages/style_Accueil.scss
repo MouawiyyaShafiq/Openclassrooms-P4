@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    animation: loader-anime 600ms 1.9s both;
+    animation: loader-anime 600ms 1.7s both;
 
     &__logo1 {
         position: absolute;
@@ -31,11 +31,11 @@
 
     &__logo2 {
         position: absolute;
-        animation: logo-anime 200ms both;
+        animation: logo-anime 150ms both;
         
         @for $i from 1 through 8  {
             &--#{$i} {
-                animation-delay: 200ms * $i;
+                animation-delay: 150ms * $i;
              }
         }
     }
@@ -161,9 +161,11 @@
     }
 
     &__cards{
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 26px;
+        align-items: center;
 
         @media (min-width: 769px) {
             flex-direction: row;
@@ -180,12 +182,8 @@
             align-items: center;
             gap: 22px;
             padding-left: 34px;
-            margin-left: 32px;
+            margin-left: 12px;
             position: relative;
-
-            @media (min-width: 769px) {
-                margin-left: 12px;
-            }
             
             &__numero {
                 font-size: 14.18px;
@@ -278,6 +276,9 @@
 
             &__button{
 
+                top: 195px;
+                right: 21px;
+
                 @include like-button-style-animation;
                 
             }
@@ -301,6 +302,10 @@
                 width: 100%;
                 background-size: cover;
                 background-position: 0% 100%;
+
+                @media (min-width: 426px) {
+                    background-position: center
+                }
 
                 @media (min-width: 769px) {
                     background-position: 0% 70%;

@@ -38,10 +38,8 @@
 }
 
 @mixin like-button-style-animation{
-    
+
     position: absolute;
-    top: 195px;
-    right: 21px;
     z-index: 1;
     
     &--input{
@@ -50,11 +48,12 @@
         position: absolute;
         cursor: pointer;
         &:checked {
-            & + .restau-card__button--visual>.heart-full{
-                opacity: 1;      
+            & + .visual>.heart-full{
+                opacity: 1;
+                     
             }
 
-            & + .restau-card__button--visual>.heart-empty{
+            & + .visual>.heart-empty{
                 opacity: 0;      
             }   
         }
@@ -62,7 +61,8 @@
     }
 
     &--visual{
-        font-size: 21px;
+        font-size: 22px;
+        transform: scaleY(1.1);
         padding: 0;
         border: none;
         background-color: white;
@@ -80,6 +80,8 @@
             color: transparent; 
             opacity: 0;
             transition: opacity 100ms;
+            font-size: 1.001em;
+            vertical-align: top;
         }
 
     }
