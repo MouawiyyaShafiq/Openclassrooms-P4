@@ -345,11 +345,21 @@ main {
   position: absolute;
   cursor: pointer;
 }
-.restaurants__cards .restau-card__button--input:checked + .visual > .heart-full {
-  opacity: 1;
+@media (max-width: 768px) {
+  .restaurants__cards .restau-card__button--input:checked + .visual > .heart-full {
+    opacity: 1;
+  }
+  .restaurants__cards .restau-card__button--input:checked + .visual > .heart-empty {
+    opacity: 0;
+  }
 }
-.restaurants__cards .restau-card__button--input:checked + .visual > .heart-empty {
-  opacity: 0;
+@media (min-width: 769px) {
+  .restaurants__cards .restau-card__button--input:hover + .visual > .heart-full {
+    opacity: 1;
+  }
+  .restaurants__cards .restau-card__button--input:hover + .visual > .heart-empty {
+    opacity: 0;
+  }
 }
 .restaurants__cards .restau-card__button--visual {
   font-size: 22px;
