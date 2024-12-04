@@ -47,6 +47,11 @@ main {
   top: 21px;
   left: 23px;
 }
+@media (min-width: 769px) {
+  .header__nav {
+    top: 37.5px;
+  }
+}
 .header__nav--arrow {
   font-size: 20px;
   transform: scaleX(0.97);
@@ -59,6 +64,13 @@ main {
      object-fit: cover;
   height: 275px;
   width: 100%;
+}
+@media (min-width: 769px) {
+  .restau-img {
+    -o-object-position: 50% 60%;
+       object-position: 50% 60%;
+    height: 383px;
+  }
 }
 
 /*Menu*/
@@ -73,11 +85,24 @@ main {
   overflow: hidden;
   margin-top: -55px;
 }
+@media (min-width: 769px) {
+  .menu {
+    width: 73.26%;
+    align-items: center;
+  }
+}
 
 .menu__header {
   background-color: #F6F6F6;
   display: flex;
   position: relative;
+  justify-content: space-between;
+}
+@media (min-width: 769px) {
+  .menu__header {
+    justify-content: center;
+    width: 600px;
+  }
 }
 .menu__header__titre {
   font-size: 28px;
@@ -88,11 +113,17 @@ main {
   margin-left: 4.53%;
   margin-bottom: 30px;
 }
+@media (min-width: 769px) {
+  .menu__header__titre {
+    margin-right: 23px;
+  }
+}
 .menu__header__button {
-  top: 45px;
-  right: 41px;
   position: absolute;
   z-index: 1;
+  position: relative;
+  margin-top: 45px;
+  margin-right: 41px;
 }
 .menu__header__button--input {
   z-index: 2;
@@ -148,6 +179,11 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+}
+@media (min-width: 769px) {
+  .menu__categorie {
+    width: 60.09%;
+  }
 }
 .menu__categorie__titre {
   margin: 0;
@@ -212,17 +248,20 @@ main {
     opacity: 1;
   }
 }
-.menu__categorie__cards > div {
-  width: 93.06%;
-  height: 69px;
+.menu__categorie__cards__card {
+  width: 85.06%;
+  height: 39px;
   display: flex;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
 }
-.menu__categorie__cards__input {
+.menu__categorie__cards__card__input {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -232,37 +271,29 @@ main {
   margin: 0;
   opacity: 0;
   cursor: pointer;
-  /*@media (min-width: 769px) {
-      &:hover{
-          & + .menu__categorie__cards__card{
-              width: 74.50%;
-
-          }
-          & + .menu__categorie__cards__card + .menu__categorie__cards__check{
-              transform: translateX(-59px)
-
-          }
-      }
-  }*/
 }
 @media (max-width: 768px) {
-  .menu__categorie__cards__input:checked + .menu__categorie__cards__card {
-    width: 74.5%;
+  .menu__categorie__cards__card__input:checked + .menu__categorie__cards__card__texte {
+    width: 74%;
   }
-  .menu__categorie__cards__input:checked + .menu__categorie__cards__card + .menu__categorie__cards__check {
+  .menu__categorie__cards__card__input:checked + .menu__categorie__cards__card__texte + .menu__categorie__cards__card__prix {
+    transform: translateX(-59px);
+  }
+  .menu__categorie__cards__card__input:checked + .menu__categorie__cards__card__texte + .menu__categorie__cards__card__prix + .menu__categorie__cards__card__check {
     transform: translateX(-59px);
   }
 }
-.menu__categorie__cards__card {
-  display: flex;
-  padding: 15px 4%;
-  width: 91.4%;
-  height: 56.52%;
-  justify-content: space-between;
-  transition: width 500ms;
+@media (min-width: 769px) {
+  .menu__categorie__cards__card__input:hover + .menu__categorie__cards__card__texte + .menu__categorie__cards__card__prix {
+    transform: translateX(-59px);
+  }
+  .menu__categorie__cards__card__input:hover + .menu__categorie__cards__card__texte + .menu__categorie__cards__card__prix + .menu__categorie__cards__card__check {
+    transform: translateX(-59px);
+  }
 }
 .menu__categorie__cards__card__texte {
   width: 91.84%;
+  transition: width 500ms;
 }
 .menu__categorie__cards__card__texte h3 {
   margin: 0px;
@@ -282,6 +313,9 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.menu__categorie__cards__card__prix {
+  transition: transform 500ms;
+}
 .menu__categorie__cards__card__prix p {
   font-size: 15px;
   font-weight: bold;
@@ -289,8 +323,9 @@ main {
   margin-bottom: 0px;
   margin-top: 21px;
 }
-.menu__categorie__cards__check {
+.menu__categorie__cards__card__check {
   position: absolute;
+  top: 0;
   right: -59px;
   height: 69px;
   width: 59px;
@@ -300,7 +335,7 @@ main {
   background-color: #99E2D0;
   transition: transform 500ms;
 }
-.menu__categorie__cards__check i {
+.menu__categorie__cards__card__check i {
   color: white;
   font-size: 20px;
 }
@@ -422,4 +457,4 @@ main {
 .footer__link .fa-handshake-angle {
   font-size: 10px;
   transform: scaleY(1.3);
-}/*# sourceMappingURL=style_page_restaurants.css.map */
+}/*# sourceMappingURL=style_page_Restaurants.css.map */
