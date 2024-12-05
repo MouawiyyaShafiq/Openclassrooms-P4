@@ -27,7 +27,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #F6F6F6;
   animation: loader-anime 600ms 1.7s both;
 }
 .loader__logo1 {

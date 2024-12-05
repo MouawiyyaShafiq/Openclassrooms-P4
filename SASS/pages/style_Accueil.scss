@@ -20,13 +20,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: $background-color;
     animation: loader-anime 600ms 1.7s both;
 
     &__logo1 {
         position: absolute;
         fill: black;
-        background-clip: text;
+        background-clip: text;   
     }
 
     &__logo2 {
